@@ -97,40 +97,50 @@ def xpathForOverstock(page):
 	pageContent = openPageContent(page)
 	tree = html.fromstring(pageContent)
 
-	# Title
-	title = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]/a/b/text()')[0])
-	print("Found title: ", title)
+	numOfItems = 31
 
-	# Content
-	content = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]/table/tbody/tr/td[2]/span/text()')[0])
-	print("Found content: '%s'." % content)
+	myData = []
 
-	# ListPrice
-	listprice = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/s/text()')[0])
-	print("Found listprice: '%s'." % listprice)
+	for x in range(1, numOfItems, 2):
 
-	# Price
-	price = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/span/b/text()')[0])
-	print("Found price: '%s'." % price)
+		if (x >= 21):
+			x += 1
+		print(x)
+		# Title
+		title = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/a/b/text()')[0])
+		print("Found title: ", title)
 
-	# Saving + saving percent
-	save = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span/text()')[0])
-	saving = save.split('(')[0].strip(" ")
-	print("Found saving: '%s'." % saving)
+		# Content
+		content = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[2]/span/text()')[0])
+		print("Found content: '%s'." % content)
 
-	# SavingPercent
-	savingpercent = save.split('(')[1].strip(" )")
+		# ListPrice
+		listprice = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/s/text()')[0])
+		print("Found listprice: '%s'." % listprice)
 
-	dataItem = {
-	    "Title": title,
-	    "Content": content,
-	    "ListPrice": listprice,
-	    "Price" : price,
-	    "Saving" : saving,
-	    "SavingPercent" : savingpercent
-	}
+		# Price
+		price = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/span/b/text()')[0])
+		print("Found price: '%s'." % price)
 
-	print("Output object:\n%s" % json.dumps(dataItem, indent = 4))
+		# Saving + saving percent
+		save = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span/text()')[0])
+		saving = save.split('(')[0].strip(" ")
+		print("Found saving: '%s'." % saving)
+
+		# SavingPercent
+		savingpercent = save.split('(')[1].strip(" )")
+
+		dataItem = {
+		    "Title": title,
+		    "Content": content,
+		    "ListPrice": listprice,
+		    "Price" : price,
+		    "Saving" : saving,
+		    "SavingPercent" : savingpercent
+		}
+
+		myData.append(dataItem)
+	print("Output object:\n%s" % json.dumps(myData, indent = 4))
 
 xpathForRtvSlo(page1)
 xpathForRtvSlo(page2)
