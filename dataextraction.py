@@ -13,7 +13,7 @@ page6 = 'WebPages/ebay/headphones _ eBay.html'
 
 # We rather use the locally-cached file as it may have changed online.
 pageContent = open('WebPages/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html', 'r').read()
-print("Page content:\n'%s'." % pageContent)
+#print("Page content:\n'%s'." % pageContent)
 
 # Get the article date
 
@@ -50,6 +50,7 @@ def xpathForRtvSlo(page):
 	# published time
 	publishedTime = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/div[1]/div[position()=2]/text()')[0])
 	print("Found publishedTime: '%s'." % publishedTime)
+	publishedTime = publishedTime.replace('\n\t\t', '')
 
 	# title
 	title = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/header/h1/text()')[0])
@@ -67,10 +68,6 @@ def xpathForRtvSlo(page):
 	content = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/div[position()=2]')[0])
 	print("Found content: '%s'." % content)
 
-	# TODO: Additionally format date
-	# date = re.sub(r"\s", "", date)
-	# print("Found date: '%s'." % date)
-
 	# Extract the image URL
 	#imageUrl = str(tree.xpath('//*[@id="container"]/div/div[1]/div[1]/div[1]/div/div[2]/a/img/@src')[0])
 	#print("Found imageUrl: '%s'." % imageUrl)
@@ -84,12 +81,9 @@ def xpathForRtvSlo(page):
 	    "Content" : content
 	}
 
-	print("Output object:\n%s" % json.dumps(dataItem, indent = 4))
+	print("Output object:\n%s" % json.dumps(dataItem, indent = 4,  ensure_ascii=False))
 
-xpathForRtvSlo(page1)
-xpathForRtvSlo(page2)
-
-def xpathForOverstock(page):
+def xpathForOverstock(page, numOfItems):
 	# TODO: additionally clean strings
 	# TODO: shorten xpaths!!!!!
 	
@@ -97,39 +91,54 @@ def xpathForOverstock(page):
 	pageContent = openPageContent(page)
 	tree = html.fromstring(pageContent)
 
-	numOfItems = 31
-
 	myData = []
 
+	path = '/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody'
+
+	""" dynamically traverse table?
+	table = tree.xpath(path)
+	count = 1
+	for tbody in table:
+		for row in tbody.xpath('./tr'):
+			# Title
+			if count >= 21:
+				if count % 2 == 0:
+					title = str(row.xpath('./td[2]/a/b/text()')[0])
+			if count % 2 == 1:
+				title = str(row.xpath('./td[2]/a/b/text()')[0])
+			count += 1
+			print("Found title: ", title)"""
+
+	
 	for x in range(1, numOfItems, 2):
 
 		if (x >= 21):
 			x += 1
 		print(x)
 		# Title
-		title = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/a/b/text()')[0])
+		title = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/a/b/text()')[0])
 		print("Found title: ", title)
 
 		# Content
-		content = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[2]/span/text()')[0])
+		content = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[2]/span/text()')[0])
 		print("Found content: '%s'." % content)
 
 		# ListPrice
-		listprice = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/s/text()')[0])
+		listprice = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/s/text()')[0])
 		print("Found listprice: '%s'." % listprice)
 
 		# Price
-		price = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/span/b/text()')[0])
+		price = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/span/b/text()')[0])
 		print("Found price: '%s'." % price)
 
 		# Saving + saving percent
-		save = str(tree.xpath('/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span/text()')[0])
+		save = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span/text()')[0])
 		saving = save.split('(')[0].strip(" ")
 		print("Found saving: '%s'." % saving)
 
 		# SavingPercent
 		savingpercent = save.split('(')[1].strip(" )")
-
+		content = content.replace('\n', ' ')
 		dataItem = {
 		    "Title": title,
 		    "Content": content,
@@ -145,6 +154,6 @@ def xpathForOverstock(page):
 xpathForRtvSlo(page1)
 xpathForRtvSlo(page2)
 
-xpathForOverstock(page3)
-xpathForOverstock(page4)
+xpathForOverstock(page3, 31)
+xpathForOverstock(page4, 17)
 
