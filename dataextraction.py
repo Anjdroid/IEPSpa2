@@ -13,7 +13,8 @@ page6 = 'WebPages/ebay/headphones _ eBay.html'
 
 
 def openPageContent(page):
-    return open(page, 'rb').read()
+    # reading as a string to preserve UTF-8 encoding
+    return open(page, 'r').read()
 
 
 def xpathForRtvSlo(pageContent):
@@ -94,9 +95,6 @@ def xpathForOverstock(pageContent):
     return json.dumps(myData, indent=4)
 
 
-
-def openCachedFile(page):
-	return open(page, 'r').read()
 
 def regexForRtvSlo(pageContent):
     #Title
@@ -232,15 +230,8 @@ if __name__ == "__main__":
     pageContent4 = openPageContent(page4)
     print(xpathForOverstock(pageContent4))
 
-    pageContentrtv1 = openCachedFile(page1)
-    pageContentrtv2 = openCachedFile(page2)
-    print(regexForRtvSlo(pageContentrtv1))
-    print(regexForRtvSlo(pageContentrtv2))
 
-    pageContentov3 = openCachedFile(page3)
-    pageContentov4 = openCachedFile(page4)
-
-    print("First page overstock:")
-    print(regexForOverstock(pageContentov3))
-    print("Second page overstock:")
-    print(regexForOverstock(pageContentov4))
+    print(regexForRtvSlo(pageContent1))
+    print(regexForRtvSlo(pageContent2))
+    print(regexForOverstock(pageContent3))
+    print(regexForOverstock(pageContent4))
