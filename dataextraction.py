@@ -11,6 +11,123 @@ page4 = 'WebPages/overstock.com/jewelry02.html'
 page5 = 'WebPages/hm/Dresses _ Maxi, Party, Evening & More _ H&M GB.html'
 page6 = 'WebPages/ebay/headphones _ eBay.html'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def openCachedFile(page):
 	return open(page, 'r').read()
 
@@ -137,17 +254,15 @@ def regexForOverstock(pageContent):
         dataList.append(dataItem)
     return json.dumps(dataList, indent = 4)
 
+pageContent1 = openCachedFile(page1)
+pageContent2 = openCachedFile(page2)
+print(regexForRtvSlo(pageContent1))
+print(regexForRtvSlo(pageContent2))
 
-if __name__ == "__main__":
-    pageContent1 = openCachedFile(page1)
-    pageContent2 = openCachedFile(page2)
-    print(regexForRtvSlo(pageContent1))
-    print(regexForRtvSlo(pageContent2))
+pageContent3 = openCachedFile(page3)
+pageContent4 = openCachedFile(page4)
 
-    pageContent3 = openCachedFile(page3)
-    pageContent4 = openCachedFile(page4)
-
-    print("First page overstock:")
-    print(regexForOverstock(pageContent3))
-    print("Second page overstock:")
-    print(regexForOverstock(pageContent4))
+print("First page overstock:")
+print(regexForOverstock(pageContent3))
+print("Second page overstock:")
+print(regexForOverstock(pageContent4))
