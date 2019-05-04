@@ -80,6 +80,7 @@ def xpathForOverstock(pageContent):
 
 		# Title
 		title = str(tree.xpath(path+'/tr['+str(x)+']/td[2]//b/text()')[0])
+		
 		# Content
 		content = str(tree.xpath(path+'/tr['+str(x)+']/td[2]//td[2]/span[@class="normal"]/text()')[0])
 		content = content.replace('\n', ' ')
