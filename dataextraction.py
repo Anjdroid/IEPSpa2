@@ -29,48 +29,30 @@ for match in matches:
     print("Found date: '{}'.".format( match.group(0) ))
 
 
-################# XPATH THINGS
-
 def openPageContent(page):
 	return open(page, 'rb').read()
 
-def xpathForRtvSlo(page):
-	# TODO: additionally clean strings
-	# TODO: extract content!!
-	# TODO: better Xpaths?? skrajsat??
-	
-	# download page
-	pageContent = openPageContent(page)
+def xpathForRtvSlo(pageContent):
 	tree = html.fromstring(pageContent)
 
 	# author
-	author = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/div[1]/div[1]/div/text()')[0])
-	print("Found author: ", author)
+	author = str(tree.xpath('//div[@class="author-name"]/text()')[0])
 
 	# published time
-	publishedTime = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/div[1]/div[position()=2]/text()')[0])
-	print("Found publishedTime: '%s'." % publishedTime)
-	publishedTime = publishedTime.replace('\n\t\t', '')
-
+	publishedTime = str(tree.xpath('//div[@class="publish-meta"]/text()')[0])
+	publishedTime = publishedTime.replace('\n\t\t', ' ')
 	# title
-	title = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/header/h1/text()')[0])
-	print("Found title: '%s'." % title)
+	title = str(tree.xpath('//header[@class="article-header"]//h1/text()')[0])
 
 	# subtitle
-	subTitle = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/header/div[position()=2]/text()')[0])
-	print("Found subtitle: '%s'." % subTitle)
+	subTitle = str(tree.xpath('//div[@class="subtitle"]/text()')[0])
 
 	# lead
-	lead = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/header/p/text()')[0])
-	print("Found lead: '%s'." % lead)
+	lead = str(tree.xpath('//p[@class="lead"]/text()')[0])
 
 	# TODO: extract content properly
-	content = str(tree.xpath('//*[@id="main-container"]/div[position()=3]/div/div[position()=2]')[0])
-	print("Found content: '%s'." % content)
-
-	# Extract the image URL
-	#imageUrl = str(tree.xpath('//*[@id="container"]/div/div[1]/div[1]/div[1]/div/div[2]/a/img/@src')[0])
-	#print("Found imageUrl: '%s'." % imageUrl)
+	content = tree.xpath('//article[@class="article"]/p/text()')
+	content = ''.join(content)
 
 	dataItem = {
 	    "Author": author,
@@ -80,65 +62,41 @@ def xpathForRtvSlo(page):
 	    "Lead" : lead,
 	    "Content" : content
 	}
+	return json.dumps(dataItem, indent = 4,  ensure_ascii=False)
 
-	print("Output object:\n%s" % json.dumps(dataItem, indent = 4,  ensure_ascii=False))
-
-def xpathForOverstock(page, numOfItems):
-	# TODO: additionally clean strings
-	# TODO: shorten xpaths!!!!!
+def xpathForOverstock(pageContent):
 	
-	# download page
-	pageContent = openPageContent(page)
 	tree = html.fromstring(pageContent)
 
 	myData = []
+	path = '//table[2]//tr[1]/td[last()]//tr[2]//tbody'
 
-	path = '/html/body/table[2]/tbody/tr[1]/td[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody'
+	tdCount = len(tree.xpath(path+'/tr[count(*)]')) - 3
 
-	""" dynamically traverse table?
-	table = tree.xpath(path)
-	count = 1
-	for tbody in table:
-		for row in tbody.xpath('./tr'):
-			# Title
-			if count >= 21:
-				if count % 2 == 0:
-					title = str(row.xpath('./td[2]/a/b/text()')[0])
-			if count % 2 == 1:
-				title = str(row.xpath('./td[2]/a/b/text()')[0])
-			count += 1
-			print("Found title: ", title)"""
-
-	
-	for x in range(1, numOfItems, 2):
+	for x in range(1, tdCount, 2):
 
 		if (x >= 21):
 			x += 1
-		print(x)
-		# Title
-		title = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/a/b/text()')[0])
-		print("Found title: ", title)
 
+		# Title
+		title = str(tree.xpath(path+'/tr['+str(x)+']/td[2]//b/text()')[0])
 		# Content
-		content = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[2]/span/text()')[0])
-		print("Found content: '%s'." % content)
+		content = str(tree.xpath(path+'/tr['+str(x)+']/td[2]//td[2]/span[@class="normal"]/text()')[0])
+		content = content.replace('\n', ' ')
 
 		# ListPrice
-		listprice = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[1]/td[2]/s/text()')[0])
-		print("Found listprice: '%s'." % listprice)
+		listprice = str(tree.xpath(path+'/tr['+str(x)+']/td[2]//td[1]//tr[1]/td[2]/s/text()')[0])
 
 		# Price
-		price = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/span/b/text()')[0])
-		print("Found price: '%s'." % price)
+		price = str(tree.xpath(path+'/tr['+str(x)+']//td[1]//tr[2]/td[2]//b/text()')[0])
 
 		# Saving + saving percent
-		save = str(tree.xpath(path+'/tr['+str(x)+']/td[2]/table/tbody/tr/td[1]/table/tbody/tr[3]/td[2]/span/text()')[0])
+		save = str(tree.xpath(path+'/tr['+str(x)+']/td[2]//td[1]//tr[3]/td[2]/span/text()')[0])
 		saving = save.split('(')[0].strip(" ")
-		print("Found saving: '%s'." % saving)
 
 		# SavingPercent
 		savingpercent = save.split('(')[1].strip(" )")
-		content = content.replace('\n', ' ')
+
 		dataItem = {
 		    "Title": title,
 		    "Content": content,
@@ -149,11 +107,16 @@ def xpathForOverstock(page, numOfItems):
 		}
 
 		myData.append(dataItem)
-	print("Output object:\n%s" % json.dumps(myData, indent = 4))
+	return json.dumps(myData, indent = 4)
 
-xpathForRtvSlo(page1)
-xpathForRtvSlo(page2)
-
-xpathForOverstock(page3, 31)
-xpathForOverstock(page4, 17)
+if __name__ == "__main__":
+	
+	pageContent1 = openPageContent(page1)
+	print(xpathForRtvSlo(pageContent1))
+	pageContent2 = openPageContent(page2)
+	print(xpathForRtvSlo(pageContent2))
+	pageContent3 = openPageContent(page3)
+	print(xpathForOverstock(pageContent3))
+	pageContent4 = openPageContent(page4)
+	print(xpathForOverstock(pageContent4))
 
