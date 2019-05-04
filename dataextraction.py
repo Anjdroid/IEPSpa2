@@ -14,8 +14,7 @@ page6 = 'WebPages/ebay/headphones _ eBay.html'
 
 def openPageContent(page):
     # reading as a string to preserve UTF-8 encoding
-    return open(page, 'r').read()
-
+    return open(page, 'r', errors='ignore').read()
 
 def xpathForRtvSlo(pageContent):
     tree = html.fromstring(pageContent)
@@ -36,7 +35,7 @@ def xpathForRtvSlo(pageContent):
     lead = str(tree.xpath('//p[@class="lead"]/text()')[0])
 
     # TODO: extract content properly
-    content = tree.xpath('//article[@class="article"]/p/text()')
+    content = tree.xpath('//article[@class="article"]/p/text() | //p/strong/text() | //p/sub/text()')
     content = ''.join(content)
 
     dataItem = {
@@ -140,8 +139,7 @@ def regexForRtvSlo(pageContent):
     matches = re.finditer(regex_content_p, extracted_html)
     for match in matches:
         ##print("Found content_u: '{}'".format(match.group(2)))
-        content = content + match.group(2).replace("<br>", " ").replace("<strong>", " ").replace("</strong>", " ")
-
+        content = content + match.group(2).replace("<br>", " ").replace("<strong>", " ").replace("</strong>", " ").replace("<sub>", " ").replace("</sub>", " ")
     #print("Found content: '{}'".format( content ))
 
     dataItem = {
@@ -222,16 +220,19 @@ def regexForOverstock(pageContent):
 
 if __name__ == "__main__":
     pageContent1 = openPageContent(page1)
-    print(xpathForRtvSlo(pageContent1))
+    print('XPath Rtv 1: \n' + xpathForRtvSlo(pageContent1))
+    print('Regex Rtv 1: \n' + regexForRtvSlo(pageContent1))
+
     pageContent2 = openPageContent(page2)
-    print(xpathForRtvSlo(pageContent2))
+    print('XPath Rtv 2: \n' + xpathForRtvSlo(pageContent2))
+    print('Regec Rtv 2: \n' + regexForRtvSlo(pageContent2))
+
     pageContent3 = openPageContent(page3)
-    print(xpathForOverstock(pageContent3))
+    print('XPath Overstock 1: \n' + xpathForOverstock(pageContent3))
+    print('Regex Overstock 1: \n' + regexForOverstock(pageContent3))
+
     pageContent4 = openPageContent(page4)
-    print(xpathForOverstock(pageContent4))
+    print('XPath Overstock 2: \n' + xpathForOverstock(pageContent4))
+    print('Regex Overstock 2: \n' + regexForOverstock(pageContent4))
 
 
-    print(regexForRtvSlo(pageContent1))
-    print(regexForRtvSlo(pageContent2))
-    print(regexForOverstock(pageContent3))
-    print(regexForOverstock(pageContent4))
