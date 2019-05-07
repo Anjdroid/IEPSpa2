@@ -1,5 +1,4 @@
 # Import libraries
-import requests
 import re
 from lxml import html
 import json
@@ -35,9 +34,8 @@ def xpathForRtvSlo(pageContent):
     # lead
     lead = str(tree.xpath('//p[@class="lead"]/text()')[0])
 
-    # TODO: extract content properly
     content = tree.xpath('//article[@class="article"]/p/text() | //p/strong/text() | //p/sub/text()')
-    content = ''.join(content)
+    content = ' '.join(content)
 
     dataItem = {
         "Author": author,
@@ -97,13 +95,13 @@ def xpathForOverstock(pageContent):
 
 
 def regexForRtvSlo(pageContent):
+
     #Title
-    ##regex_title_simple = r"<h1>(.*)<\/h1>"
     regex_title = r"<header class=\"article-header\">(.|\n)*?<h1>(.*?)<\/h1>"
 
     match = re.compile(regex_title).search(pageContent)
     title = match.group(2)
-    #print("Found title: '{}'".format( title ))
+
 
     #Author and timestamp
     regex_author_timestamp = r'<div class="author-timestamp">\s+<strong>(.*?)<\/strong>\|\s+([0-9]{2}\.\s+[a-z]*\s+[0-9]{4}\s+ob\s+[0-9]{2}:[0-9]{2})'
@@ -111,38 +109,46 @@ def regexForRtvSlo(pageContent):
     match = re.compile(regex_author_timestamp).search(pageContent)
     author = match.group(1)
     timestamp = match.group(2)
-    #print("Found author: '{}'".format(author))
-    #print("Found timestamp: '{}'".format(timestamp))
 
     #Subtitle
     regex_subtitle = r'<div class="subtitle">(.*)</div>'
 
     match = re.compile(regex_subtitle).search(pageContent)
     subtitle = match.group(1)
-    #print("Found subtitle: '{}'".format(subtitle))
+
 
     #Lead
     regex_lead = r'<p class="lead">(.*)</p>'
 
     match = re.compile(regex_lead).search(pageContent)
     lead = match.group(1)
-    #print("Found lead: '{}'".format(lead ))
+
 
     #Content
-    regex_content = r'<article class="article">((.|\n)*?)</article>'
 
-    match = re.compile(regex_content).search(pageContent)
-    extracted_html = match.group(0)
+    # We could first extract html that is within tags article(comented code) and then do another regular expression
+    # that in this text(extracted_html_article) only searches for p tags,
+    # reg expr: regex_content_p = r'<p( class="Body")?>(?!<iframe.*?</iframe>)((.|\n)*?)</p>'
+    # but that is not one reg. expresion for data item
+
+    #regex_content = r'<article class="article">((.|\n)*?)</article>'
+    #match = re.compile(regex_content).search(pageContent)
+    #extracted_html_article = match.group(0)
+
+    # Therfore we search through html looking for p tags that have no whitespace character in front,
+    #thats how we know that we are in the content area
+
     content = " "
-    ##print("Found html content: '{}'".format( match.group(0) ))
+    regex_content_p = r'(?<!\s)<p( class="Body")?>(?!<iframe.*?</iframe>)((.|\n)*?)</p>'
 
-    regex_content_p = r'<p( class="Body")?>(?!<iframe.*?</iframe>)((.|\n)*?)</p>'
-    matches = re.finditer(regex_content_p, extracted_html)
+    matches = re.finditer(regex_content_p, pageContent)
     for match in matches:
-        ##print("Found content_u: '{}'".format(match.group(2)))
         content = content + match.group(2).replace("<br>", " ").replace("<strong>", " ").replace("</strong>", " ").replace("<sub>", " ").replace("</sub>", " ")
-    #print("Found content: '{}'".format( content ))
 
+    #removing the first blank space that I generated
+    content = content[1:]
+
+    #JSON
     dataItem = {
         "Author": author,
         "PublishedTime": timestamp,
@@ -154,6 +160,49 @@ def regexForRtvSlo(pageContent):
     return json.dumps(dataItem, indent=4, ensure_ascii=False)
 
 
+def xpathForOverstockNina(pageContent):
+    tree = html.fromstring(pageContent)
+
+    #Title
+    title = tree.xpath('//td[@valign="top"]/a/b/text()')
+
+
+    # ListPrice
+    listprice = tree.xpath('//s/text()')
+
+    # Price
+    price = tree.xpath('//span[@class="bigred"]/b/text()')
+
+    # Saving and SavingPercent
+    save = tree.xpath('//span[@class="littleorange"]/text()')
+
+    saving  = []
+    savingpercent = []
+    for i in range(len(save)):
+        saving.append(save[i].split('(')[0].strip(" "))
+        savingpercent.append(save[i].split('(')[1].strip(" )"))
+
+
+    #Content
+    content = tree.xpath('//span[@class="normal"]/text()')
+
+    for i in range(len(content)):
+        content[i] = content[i].replace('\n', ' ')
+
+    dataList = []
+    for i in range(len(price)):
+        dataItem = {
+            "Title": title[i],
+            "Content": content[i],
+            "ListPrice": listprice[i],
+            "Price": price[i],
+            "Saving": saving[i],
+            "SavingPercent": savingpercent[i]
+        }
+        dataList.append(dataItem)
+
+    return json.dumps(dataList, indent=4)
+
 def regexForOverstock(pageContent):
     #List price
     listprice = []
@@ -161,7 +210,6 @@ def regexForOverstock(pageContent):
 
     matches = re.finditer(regex_listprice, pageContent)
     for match in matches:
-        #print("Found list price: '{}'".format( match.group(1) ))
         listprice.append(match.group(1))
 
     #Price
@@ -170,7 +218,6 @@ def regexForOverstock(pageContent):
 
     matches = re.finditer(regex_price, pageContent)
     for match in matches:
-        #print("Found price: '{}'".format( match.group(1) ))
         price.append(match.group(1))
 
     #Saving and saving percent
@@ -180,8 +227,6 @@ def regexForOverstock(pageContent):
 
     matches = re.finditer(regex_save, pageContent)
     for match in matches:
-        #print("Found Saving: '{}'".format(match.group(1)))
-        #print("Found SavingPercent: '{}'".format( match.group(2) ))
         saving.append(match.group(1))
         savingPercent.append(match.group(2))
 
@@ -192,7 +237,6 @@ def regexForOverstock(pageContent):
 
     matches = re.finditer(regex_title, pageContent)
     for match in matches:
-        #print("Found title: '{}'".format( match.group(1) ))
         title.append(match.group(1))
 
     #Content
@@ -202,7 +246,6 @@ def regexForOverstock(pageContent):
     matches = re.finditer(regex_content, pageContent)
     for match in matches:
         content_pretified = match.group(1).replace("\n", " ").replace("  ", " ")
-        #print("Found content: '{}'".format(content_pretified))
         content.append(content_pretified)
 
     dataList = []
@@ -348,7 +391,6 @@ def regexForEbay(pageContent):
             price = match.group(1) + match.group(3) + match.group(5)
         else:
             price = match.group(1)
-        # print("Found price:"+price)
         item_prices.append(price)
 
     # Shippings
@@ -358,7 +400,6 @@ def regexForEbay(pageContent):
 
     matches = re.finditer(regex_shipping, pageContent)
     for match in matches:
-        # print("Found shipping: '{}'".format( match.group(2) ))
         item_shippings.append(match.group(2))
 
     # BuyMethods
@@ -368,7 +409,6 @@ def regexForEbay(pageContent):
 
     matches = re.finditer(regex_buyMethod, pageContent)
     for match in matches:
-        # print("Found buy method: '{}'".format(match.group(4)))
         item_buymethods.append(match.group(4))
 
     # Item Hotness
@@ -382,9 +422,7 @@ def regexForEbay(pageContent):
         match = re.compile(regex_itemHotness).search(el.group(0))
         if (match):
             item_hotness = match.group(2)
-            # print(item_hotness)
         else:
-            # print("nope")
             item_hotness = ""
         items_hotness.append(item_hotness)
 
@@ -415,13 +453,15 @@ if __name__ == "__main__":
     print('XPath Rtv 2: \n' + xpathForRtvSlo(pageContent2))
     print('Regex Rtv 2: \n' + regexForRtvSlo(pageContent2))
 
+
     pageContent3 = openPageContent(page3)
-    print('XPath Overstock 1: \n' + xpathForOverstock(pageContent3))
+    print('XPath Overstock 1: \n' + xpathForOverstockNina(pageContent3))
     print('Regex Overstock 1: \n' + regexForOverstock(pageContent3))
 
     pageContent4 = openPageContent(page4)
-    print('XPath Overstock 2: \n' + xpathForOverstock(pageContent4))
+    print('XPath Overstock 2: \n' + xpathForOverstockNina(pageContent4))
     print('Regex Overstock 2: \n' + regexForOverstock(pageContent4))
+
 
     pageContent5 = openPageContent(page5)
     print('XPath Ebay 1: \n' + xpathForEbay(pageContent5))
@@ -430,6 +470,4 @@ if __name__ == "__main__":
     pageContent6 = openPageContent(page6)
     print('XPath Ebay 2: \n' + xpathForEbay(pageContent6))
     print('Regex Ebay 2: \n' + regexForEbay(pageContent6))
-
-
-
+    
