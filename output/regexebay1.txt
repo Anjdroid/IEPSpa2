@@ -1,4 +1,3 @@
-Regex Ebay 1: 
 [
     {
         "Title": "Genuine Samsung Handsfree Headphones Earphones Earbud with Mic- EHS64AVFWE",

@@ -1,4 +1,3 @@
-Regex Overstock 1: 
 [
     {
         "Title": "10-kt. Seven Diamond Ladies Heart Ring (0.08 TW)",

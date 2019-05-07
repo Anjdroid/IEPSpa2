@@ -1,4 +1,3 @@
-Regex Overstock 2: 
 [
     {
         "Title": "14-kt. Green Jade Hoops",

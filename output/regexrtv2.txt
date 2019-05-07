@@ -1,4 +1,3 @@
-Regex Rtv 2: 
 {
     "Author": "Miha Merljak",
     "PublishedTime": "25. januar 2019 ob 15:23",

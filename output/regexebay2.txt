@@ -1,4 +1,3 @@
-Regex Ebay 2: 
 [
     {
         "Title": "Notebook HP 1wy10ea 255 g6 AMD Dual 4gb RAM ddr4/hdd 500gb/Windows 10",

@@ -1,4 +1,3 @@
-XPath Rtv 1: 
 {
     "Author": "Miha Merljak",
     "PublishedTime": " 28. december 2018 ob 08:51",

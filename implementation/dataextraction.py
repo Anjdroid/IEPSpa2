@@ -3,14 +3,12 @@ import re
 from lxml import html
 import json
 
-page1 = 'input/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'
-page2 = 'input/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'
-page3 = 'input/overstock.com/jewelry01.html'
-page4 = 'input/overstock.com/jewelry02.html'
-page5 = 'input/ebay/headphones _ eBay.html'
-page6 = 'input/ebay/laptops in _Computers, Tablets, and Networking_ _ eBay.html'
-
-
+page1 = '../input/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'
+page2 = '../input/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'
+page3 = '../input/overstock.com/jewelry01.html'
+page4 = '../input/overstock.com/jewelry02.html'
+page5 = '../input/ebay/headphones _ eBay.html'
+page6 = '../input/ebay/laptops in _Computers, Tablets, and Networking_ _ eBay.html'
 
 def openPageContent(page):
     # reading as a string to preserve UTF-8 encoding
@@ -46,53 +44,6 @@ def xpathForRtvSlo(pageContent):
         "Content": content
     }
     return json.dumps(dataItem, indent=4, ensure_ascii=False)
-
-
-def xpathForOverstock(pageContent):
-    tree = html.fromstring(pageContent)
-
-    myData = []
-    path = '//table[2]//tr[1]/td[last()]//tr[2]//tbody'
-
-    tdCount = len(tree.xpath(path + '/tr[count(*)]')) - 3
-
-    for x in range(1, tdCount, 2):
-
-        if (x >= 21):
-            x += 1
-
-        # Title
-        title = str(tree.xpath(path + '/tr[' + str(x) + ']/td[2]//b/text()')[0])
-        # Content
-        content = str(tree.xpath(path + '/tr[' + str(x) + ']/td[2]//td[2]/span[@class="normal"]/text()')[0])
-        content = content.replace('\n', ' ')
-
-        # ListPrice
-        listprice = str(tree.xpath(path + '/tr[' + str(x) + ']/td[2]//td[1]//tr[1]/td[2]/s/text()')[0])
-
-        # Price
-        price = str(tree.xpath(path + '/tr[' + str(x) + ']//td[1]//tr[2]/td[2]//b/text()')[0])
-
-        # Saving + saving percent
-        save = str(tree.xpath(path + '/tr[' + str(x) + ']/td[2]//td[1]//tr[3]/td[2]/span/text()')[0])
-        saving = save.split('(')[0].strip(" ")
-
-        # SavingPercent
-        savingpercent = save.split('(')[1].strip(" )")
-
-        dataItem = {
-            "Title": title,
-            "Content": content,
-            "ListPrice": listprice,
-            "Price": price,
-            "Saving": saving,
-            "SavingPercent": savingpercent
-        }
-
-        myData.append(dataItem)
-    return json.dumps(myData, indent=4)
-
-
 
 def regexForRtvSlo(pageContent):
 
@@ -160,7 +111,7 @@ def regexForRtvSlo(pageContent):
     return json.dumps(dataItem, indent=4, ensure_ascii=False)
 
 
-def xpathForOverstockNina(pageContent):
+def xpathForOverstock(pageContent):
     tree = html.fromstring(pageContent)
 
     #Title
@@ -455,11 +406,11 @@ if __name__ == "__main__":
 
 
     pageContent3 = openPageContent(page3)
-    print('XPath Overstock 1: \n' + xpathForOverstockNina(pageContent3))
+    print('XPath Overstock 1: \n' + xpathForOverstock(pageContent3))
     print('Regex Overstock 1: \n' + regexForOverstock(pageContent3))
 
     pageContent4 = openPageContent(page4)
-    print('XPath Overstock 2: \n' + xpathForOverstockNina(pageContent4))
+    print('XPath Overstock 2: \n' + xpathForOverstock(pageContent4))
     print('Regex Overstock 2: \n' + regexForOverstock(pageContent4))
 
 
