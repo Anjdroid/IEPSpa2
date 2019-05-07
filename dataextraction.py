@@ -3,12 +3,12 @@ import re
 from lxml import html
 import json
 
-page1 = 'WebPages/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'
-page2 = 'WebPages/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'
-page3 = 'WebPages/overstock.com/jewelry01.html'
-page4 = 'WebPages/overstock.com/jewelry02.html'
-page5 = 'WebPages/ebay/headphones _ eBay.html'
-page6 = 'WebPages/ebay/laptops in _Computers, Tablets, and Networking_ _ eBay.html'
+page1 = 'input/rtvslo.si/Audi A6 50 TDI quattro_ nemir v premijskem razredu - RTVSLO.si.html'
+page2 = 'input/rtvslo.si/Volvo XC 40 D4 AWD momentum_ suvereno med najboljs╠îe v razredu - RTVSLO.si.html'
+page3 = 'input/overstock.com/jewelry01.html'
+page4 = 'input/overstock.com/jewelry02.html'
+page5 = 'input/ebay/headphones _ eBay.html'
+page6 = 'input/ebay/laptops in _Computers, Tablets, and Networking_ _ eBay.html'
 
 
 
@@ -470,4 +470,4 @@ if __name__ == "__main__":
     pageContent6 = openPageContent(page6)
     print('XPath Ebay 2: \n' + xpathForEbay(pageContent6))
     print('Regex Ebay 2: \n' + regexForEbay(pageContent6))
-    
+

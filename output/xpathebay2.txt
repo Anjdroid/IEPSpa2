@@ -1,0 +1,453 @@
+XPath Ebay 2: 
+[
+    {
+        "Title": "Notebook HP 1wy10ea 255 g6 AMD Dual 4gb RAM ddr4/hdd 500gb/Windows 10",
+        "ItemCondition": "New (Other)",
+        "Price": "$232.59",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Italy",
+        "ShippingCost": "+$17.90 shipping",
+        "ItemHotness": "115 Sold"
+    },
+    {
+        "Title": "NEW! DELL 15.6\" Full-HD AMD Ryzen 5 3.60GHz 20GB 1TB HD Windows 10 Gaming Laptop",
+        "ItemCondition": "Brand New",
+        "Price": "$427.95 to $447.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$45.80 shipping",
+        "ItemHotness": "37+ Sold"
+    },
+    {
+        "Title": "Laptop HP EliteBook 745 g2 - 3,2ghz - 8gb - 128ssd - 1600x900-Windows 10",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$166.69",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From Italy",
+        "ShippingCost": "+$54.82 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HP 9470M 14.0\" Laptop Intel Core i5 3rd Gen 3427U (1.80 GHz) 4 GB Memory",
+        "ItemCondition": "Brand New",
+        "Price": "$49.21",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "9 Watching"
+    },
+    {
+        "Title": "HP 17.3\" Laptop AMD DualCore 3.60GHz 8GB Ram 1TB HD DVDRW Backlit Keyboard Win10",
+        "ItemCondition": "Refurbished",
+        "Price": "$399.95 to $409.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$34.63 shipping",
+        "ItemHotness": "60+ Watching"
+    },
+    {
+        "Title": "HP 15.6 TouchScreen Intel Pentium 2.70GHz 8GB 128GB SSD Drive DVDRW Win10 Laptop",
+        "ItemCondition": "Refurbished",
+        "Price": "$366.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$32.28 shipping",
+        "ItemHotness": "143+ Sold"
+    },
+    {
+        "Title": "HP 17.3\u00e2\u20ac\u0165 HD+ TouchScreen Laptop Intel Core i3 3.40GHz 8GB 1TB DVD+RW WebCam BT",
+        "ItemCondition": "Refurbished",
+        "Price": "$457.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$33.69 shipping",
+        "ItemHotness": "37+ Watching"
+    },
+    {
+        "Title": "Dell Latitude 15.6\" E6510 Intel Core i5 2.40GHz 4GB DVD\u00c2\u00b1RW Wi-Fi 160GB w/Adapter",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$80.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "31 Watching"
+    },
+    {
+        "Title": "Portable Notebook Computer Dell e5410 Refurbished 14\" Quad Core i5 4gb 320gb",
+        "ItemCondition": "Refurbished",
+        "Price": "$178.89",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Italy",
+        "ShippingCost": "+$27.97 shipping",
+        "ItemHotness": "16 Watching"
+    },
+    {
+        "Title": "Dell Vostro 1510 Laptop 240GB SSD Windows 10 Pro",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$85.27",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$32.13 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Acer Aspire ES1-411 14\" (500GB, Intel Celeron Dual-Core, 2.16GHz, 2GB) Laptop",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$78.71",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$22.08 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "BLACK Panasonic CF-52 Toughbook Laptop Core 2 Duo 2GB RAM WiFi NO HDD NO AC",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$98.38",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$22.54 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "PC NOTEBOOK PORTATILE RICONDIZIONATO HP FOLIO 9470M QUAD CORE i5 4GB HDD 320GB",
+        "ItemCondition": "Refurbished",
+        "Price": "$212.45",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Italy",
+        "ShippingCost": "+$27.97 shipping",
+        "ItemHotness": "260 Sold"
+    },
+    {
+        "Title": "Dell Latitude E5540 Laptop 15.6\" (Intel Core i5-320GB-8GB) Windows 10",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$135.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$33.77 shipping",
+        "ItemHotness": "2 Watching"
+    },
+    {
+        "Title": "HP EliteBook Ultrabook 840 G1 i7-4600U 8GB 256GB SSD 1920x1080 Win10 AMD Radeon",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$301.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$17.90 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Dell Inspiron 13\" Laptop i7 2.4GHz 8GB 1TB Windows 10 Pro (13-7352)",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$100.36",
+        "BuyingMethod": "2 bids",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$58.75 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Notebook Tablet PC HP Refurbished laptop core i7 8gb SSD 120gb Windows 10",
+        "ItemCondition": "Refurbished",
+        "Price": "$301.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Italy",
+        "ShippingCost": "+$27.97 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HP Compaq Presario CQ61 15.6\" Intel Cel900 3GB 250GB Laptop Win 10 Pro Office 16",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$90.52",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$22.42 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "MSI GE70 Laptop  GTX 960M 16GB 256GB SSD I7 4720hq 17.3\"",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$491.96",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$41.90 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Microsoft Surface Book 13.5\" Intel i7 16GB RAM 1TB SSD 1GB Nvidia.",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$23.17",
+        "BuyingMethod": "2 bids",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$31.35 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "CHEAP FAST Lenovo ThinkPad R60 Intel Core 2 Duo 3GB RAM 160GB HDD Win 7 DVD WIFI",
+        "ItemCondition": "Refurbished",
+        "Price": "$119.37",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$22.87 shipping",
+        "ItemHotness": "Only 1 left!"
+    },
+    {
+        "Title": "Dell Inspiron 15.6\" In Laptop 3567 Intel Core i3-7130U 2.7GHz 8GB RAM 1TB HDD ",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$1.00",
+        "BuyingMethod": "0 bids",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$388.08 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Lenovo ThinkPad P51 Signature Edition",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$850.00",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$66.95 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Lenovo ThinkPad Edge E555 Laptop A8-7100 Radeon R5 4GB RAM 500GB HDD 15.6\" W10",
+        "ItemCondition": "Refurbished",
+        "Price": "$170.53",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$23.47 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HOT! LENOVO 15.6\u00e2\u20ac\u0165 Laptop Intel 2.60GHz 4GB 1TB DVD+RW WebCam HDMI USB Windows 10",
+        "ItemCondition": "Refurbished",
+        "Price": "$274.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$30.86 shipping",
+        "ItemHotness": "499+ Sold"
+    },
+    {
+        "Title": "NEW HP Stream 14\" Laptop Celeron N3060 4GB RAM 32GB 32 GB eMMC Windows 10",
+        "ItemCondition": "Brand New",
+        "Price": "$209.99",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$22.05 shipping",
+        "ItemHotness": "1,138+ Sold"
+    },
+    {
+        "Title": "Dell Latitude E5410 14\" Intel Core i5 160GB HDD 4 GB RAM 4GB Laptop",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$32.80",
+        "BuyingMethod": "0 bids",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$30.71 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "New Dell 5570 15.6\" Laptop i7-7500U 4/8/16GB RAM 1TB HDD 500GB 1TB SSD Customize",
+        "ItemCondition": "Brand New",
+        "Price": "$549.99 to $819.99",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$39.05 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "CHEAP HP Compaq Core 2 Duo LAPTOP WINDOWS 7 10 2GB 4GB RAM 14\" WiFi Warranty",
+        "ItemCondition": "Refurbished",
+        "Price": "$104.94 to $183.65",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$22.75 shipping",
+        "ItemHotness": "29+ Watching"
+    },
+    {
+        "Title": "HP 250 G6 15,6\" - Intel Laptop N4000 4 GB RAM 1000 GB HDD Win 10 Pro",
+        "ItemCondition": "Brand New",
+        "Price": "$268.49",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$13.31 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Lenovo ThinkPad X230 Core i5 2,6 GHz, HD, Win 7, equipment and condition selectable",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$133.13 to $184.59",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$21.26 shipping",
+        "ItemHotness": "18+ Watching"
+    },
+    {
+        "Title": "Lenovo ThinkPad X1 Yoga --- i7 6600U - 16GB Ram - 512GB SSD - IPS WQHD",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$749.99",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$35.02 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Tablet HP Revolve 810 G3 Core i5-5300U 4Gb 128Gb SSD Touchscreen Windows 10",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$257.06",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$22.26 shipping",
+        "ItemHotness": "Only 1 left!"
+    },
+    {
+        "Title": "Dell Latitude E6430 laptop i7 3520M 2.90GHz 8Gb 1TB HDD DVD RW wifi Win10 pro ",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$80.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Notebook HP Intel Dual 2,6GHz 17,3 Display 4GB RAM - 1000GB - Windows 10 Pro",
+        "ItemCondition": "Brand New",
+        "Price": "$334.51",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$16.67 shipping",
+        "ItemHotness": "40 Watching"
+    },
+    {
+        "Title": "Lenovo Thinkpad x230 Laptop 12.5\" i5-3380m @ 2.9GHz 8GB DDR3 500GB HDD",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$120.68",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$15.74 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Lenovo ThinkPad T420S Intel i7 2,70GHz 8GB 180GB SSD 1600x900 W10 Grade A NVIDIA",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$246.01",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$17.90 shipping",
+        "ItemHotness": "30 Watching"
+    },
+    {
+        "Title": "Dell Inspiron 15.6\" HD Touchscreen Intel Core i5-7200U Customize Laptop PC WIN10",
+        "ItemCondition": "Brand New",
+        "Price": "$508.00 to $818.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$38.63 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HP Touchscreen 15.6\" Laptop i5-7200U HDMI DVD-RW Customize Ram/Hard Drive Win 10",
+        "ItemCondition": "Brand New",
+        "Price": "$483.99 to $843.99",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$37.95 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "12.5\" Laptop Lenovo Thinkpad X230 2.9GHz 3380m Core i5 4GB DDR3 500GB HDD",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$110.19",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$15.74 shipping",
+        "ItemHotness": "19 Watching"
+    },
+    {
+        "Title": "HD 14 inch Laptop Notebook Intel Quad Core 1.92Ghz 32GB eMMC 2GB Ram Windows Lot",
+        "ItemCondition": "Brand New",
+        "Price": "$11.79 to $196.77",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$27.54 shipping",
+        "ItemHotness": "31+ Sold"
+    },
+    {
+        "Title": " Dell Latitude E6540 Laptop Intel Core i5 2.70GHz 16GB RAM 500GB Win 10 Pro WIFI",
+        "ItemCondition": "Refurbished",
+        "Price": "$229.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$33.30 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HP EliteBook 840 G5 14\" Laptop Intel Core i5-8350U, 8GB RAM, 256GB SSD",
+        "ItemCondition": "Brand New",
+        "Price": "$655.95",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$48.05 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Acer Aspire E1-771 Laptop",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$1.30",
+        "BuyingMethod": "0 bids",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$29.58 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HP EliteBook 820 G1 12.5\" Laptop Intel i5-4300u 1.9GHz 4th gen - Options Grade A",
+        "ItemCondition": "Refurbished",
+        "Price": "$118.06 to $321.40",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$15.19 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Dell Latitude E7250 12.5\u00e2\u20ac\u0165 Laptop Windows 10 Pro/128GB SSD/8GB RAM!",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$99.99",
+        "BuyingMethod": "0 bids",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$31.30 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Ordinateur Portable PC Windows10 14.1\" JUMPER EZbook 2 4GO 64GO WIFI HDMI BT CAM",
+        "ItemCondition": "Brand New",
+        "Price": "$211.43",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From France",
+        "ShippingCost": "+$11.19 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Hp Pavilion X360 15.6 Inch 2in1 i5-8250U TouchscreenFHD Laptop Customize Ram&SSD",
+        "ItemCondition": "Brand New",
+        "Price": "$611.00 to $871.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$41.94 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "HP ZBook 14 14\u00e2\u20ac\u0165 Laptop Windows 10 Pro/i7/500GB SSD/16GB RAM!",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$149.99",
+        "BuyingMethod": "0 bids",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$25.72 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Panasonic Toughbook cf-19 Core i5 1,20ghz 4gb 10 Inch Touchscreen GPS W-LAN",
+        "ItemCondition": "Refurbished",
+        "Price": "$254.91 to $379.76",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Germany",
+        "ShippingCost": "+$24.61 shipping",
+        "ItemHotness": "39+ Watching"
+    }
+]

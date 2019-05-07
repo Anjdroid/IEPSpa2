@@ -1,0 +1,228 @@
+Regex Ebay 1: 
+[
+    {
+        "Title": "Genuine Samsung Handsfree Headphones Earphones Earbud with Mic- EHS64AVFWE",
+        "ItemCondition": "Brand New",
+        "Price": "$3.60",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$3.27 shipping",
+        "ItemHotness": "10,000+ Sold"
+    },
+    {
+        "Title": "Wireless Bluetooth V4.2 Magnetic Sport Earphone Headset Stereo Headphones",
+        "ItemCondition": "Brand New",
+        "Price": "$1.30 to $2.47",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "221+ Sold"
+    },
+    {
+        "Title": "Wireless Bluetooth Headphones Foldable Stereo Earphones Super Bass Headset Mic",
+        "ItemCondition": "Brand New",
+        "Price": "$17.99",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "2,433+ Sold"
+    },
+    {
+        "Title": "AKG Earphones Samsung Galaxy Headphones Handsfree Earbud For S9 S8 Note 8",
+        "ItemCondition": "Brand New",
+        "Price": "$4.43",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$3.26 shipping",
+        "ItemHotness": "532 Sold"
+    },
+    {
+        "Title": "Orginal Genuine Samsung AKG Stereo Headphones Handsfree Earphone In Ear Earbud ",
+        "ItemCondition": "Brand New",
+        "Price": "$5.99 to $17.89",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "74+ Sold"
+    },
+    {
+        "Title": " Wireless earphone in-ear Bluetooth Wireless headphones Android Left And Right",
+        "ItemCondition": "Brand New",
+        "Price": "$5.76",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "P47 New Foldable Wireless Bluetooth Stereo Headset Handsfree Headphones +Mic",
+        "ItemCondition": "Brand New",
+        "Price": "$8.69 to $8.80",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "164+ Sold"
+    },
+    {
+        "Title": "Samsung AKG Headphones Headset Earphones EarBuds Galaxy S9 S8 S8+ S7 S6 Note 9 8",
+        "ItemCondition": "Brand New",
+        "Price": "$3.90",
+        "BuyingMethod": "or Best Offer",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "98 Sold"
+    },
+    {
+        "Title": "Bluetooth headset i7s tws wireless with charging case helmets iPhone Andro",
+        "ItemCondition": "Brand New",
+        "Price": "$10.12",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Spain",
+        "ShippingCost": "+$3.37 shipping",
+        "ItemHotness": "77 Sold"
+    },
+    {
+        "Title": "Sony WFSP700N Wireless Noise Canceling Sports In-Ear Headphones Black WF-SP700N",
+        "ItemCondition": "Refurbished",
+        "Price": "$57.99",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$16.19 shipping",
+        "ItemHotness": "820 Sold"
+    },
+    {
+        "Title": "bluetooth 5.0 Headset TWS Wireless Earphones Twins Earbuds 5D Stereo Headphones",
+        "ItemCondition": "Brand New",
+        "Price": "$8.99 to $15.98",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "129+ Sold"
+    },
+    {
+        "Title": "Bluedio T3 Wireless  Bluetooth 4.1 Headphones Headset Stereo Music With Mic Bt",
+        "ItemCondition": "Brand New",
+        "Price": "$14.00",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Headphones Marshall Mode EQ Original Earbuds Earphones Stereo Remote Mic",
+        "ItemCondition": "Brand New",
+        "Price": "$6.54 to $23.64",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "177+ Sold"
+    },
+    {
+        "Title": "Sony ZX220BT Wireless On-Ear Bluetooth Headphones w/ Built-In Microphone, Black",
+        "ItemCondition": "New (Other)",
+        "Price": "$28.72",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$15.74 shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "Ver-Ear Teens Foldable DJ Headphones 3.5mm Wired Bass Game Earphones WIth MIC X",
+        "ItemCondition": "Brand New",
+        "Price": "$2.94 to $7.20",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": ""
+    },
+    {
+        "Title": "KitSound Headphones On Ear Brooklyn Wired - Phone/PS4/Switch/PC/XBox 1 Black NEW",
+        "ItemCondition": "Brand New",
+        "Price": "$9.14",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$3.60 shipping",
+        "ItemHotness": "470 Sold"
+    },
+    {
+        "Title": "Bluetooth Earphones Sweatproof Wireless Headphones For iPhone Samsung Headset ",
+        "ItemCondition": "Brand New",
+        "Price": "$7.86",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From Ireland",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "181 Sold"
+    },
+    {
+        "Title": "Sony WF-SP700N/B True Wireless Bluetooth Noise Canceling Sports Headphones Black",
+        "ItemCondition": "Pre-Owned",
+        "Price": "$42.98",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$15.96 shipping",
+        "ItemHotness": "30 Watching"
+    },
+    {
+        "Title": "Metal Magnetic Wireless Bluetooth Earphone Sports Headset Stereo Bass Headphone",
+        "ItemCondition": "Brand New",
+        "Price": "$7.91",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "5,353+ Sold"
+    },
+    {
+        "Title": "JBL T110 In-Ear 1 Button Headphones Earphones - Black",
+        "ItemCondition": "Brand New",
+        "Price": "$10.45",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United Kingdom",
+        "ShippingCost": "+$3.27 shipping",
+        "ItemHotness": "97 Sold"
+    },
+    {
+        "Title": "Wired Marshall Major I  Remote  Headphones Noise Deep Bass Headset Sport Music",
+        "ItemCondition": "Brand New",
+        "Price": "$22.23 to $22.56",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "171+ Sold"
+    },
+    {
+        "Title": "Sennheiser PXC 550 Wireless Bluetooth Headphones - Black",
+        "ItemCondition": "New (Other)",
+        "Price": "$179.98",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$26.18 shipping",
+        "ItemHotness": "10% off"
+    },
+    {
+        "Title": "BT-09 Wireless Bluetooth Headphones Foldable Headset Stereo Heavy Bass Earphones",
+        "ItemCondition": "Brand New",
+        "Price": "$23.99 to $24.14",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": "2,637+ Sold"
+    },
+    {
+        "Title": "Beats by Dr. Dre Powerbeats 3 Wireless Bluetooth Headphones ",
+        "ItemCondition": "New (Other)",
+        "Price": "$54.95",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From United States",
+        "ShippingCost": "+$17.23 shipping",
+        "ItemHotness": "306+ Sold"
+    },
+    {
+        "Title": "Bluetooth 5.0 Headset TWS Wireless Earphones Mini Earbuds Stereo Headphones IPX7",
+        "ItemCondition": "Brand New",
+        "Price": "$9.89 to $18.44",
+        "BuyingMethod": "Buy It Now",
+        "ItemLocation": "From China",
+        "ShippingCost": "Free International Shipping",
+        "ItemHotness": ""
+    }
+]
